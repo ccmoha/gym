@@ -19,13 +19,21 @@ header {
     /* height: 100%;    */
 }
 
-img {
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* img {
     width: 100%;
 }
 
 video {
     width: 100%;
-}
+} */
 
 .gym-container {
     width: min(90%, 70rem);
@@ -150,7 +158,7 @@ video {
 }
 
 .hero_event h1 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: 900;
     color: #333;
 }
@@ -295,7 +303,7 @@ video {
     font-size: 1.5rem;
     font-weight: 300;
     flex-wrap: wrap;
-    margin: 0 2rem;
+    margin: 0 0.8rem;
     text-align: center;
     color: white;
 }
@@ -383,108 +391,53 @@ video {
 .table_schedules {
     display: flex;
     position: relative;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    padding: 2rem;
 }
-
-.table_imge img {
-    height: 100%;
-    width: 100%;
+.table_schedules{
+    background: url("/images/schedule-bg.jpg") center/cover no-repeat;
 }
-
-.program_table {
+.program_table{
     display: flex;
-    position: absolute;
-    gap: 0.7rem;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-}
-
-.program_table img {
-    width: 10%;
-    height: auto;
-}
-
-.program_table h2 {
-    font-size: 1.5;
     color: #fff;
+    gap: 0.6rem;
 }
-
-.program_table h2 span {
+.program_table h2{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.program_table h2 span{
+    font-size: 1.4rem;
+    font-weight: 500;
     color: tomato;
 }
-
-.program_table p {
-    color: #fff;
-}
-
-.class_days {
-    position: absolute;
+.class_days .days{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-
-.days {
-    display: flex;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    list-style: none;
     gap: 1rem;
-    position: absolute;
-    top: 10rem;
-}
-
-.days li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
     color: #fff;
 }
-
-.days li:not(:last-child)::after {
-    content: '/';
-    margin-left: 0.5rem;
+.class_table table tbody tr td{
+    font-size: 1rem;
+    border: 1px solid #fff;
+    padding: 2rem;
     color: #fff;
+    border-color: white;
 }
-
-.days li:hover {
-    color: tomato;
-    cursor: pointer;
-}
-
-.class_table {
-    display: flex;
-    position: absolute;
-    top: 13rem;
-}
-
-.tables {
-    width: 100%;
-    border: 0.1rem solid white;
-    padding: 3rem;
-    border-collapse: collapse;
-}
-
-.tables td {
-    padding: 2.3rem;
-    border: 1px solid white;
-}
-
-.tab_list {
-    text-align: center;
-    color: #fff;
-}
-.program_expert{
+.program_expert {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 1rem;
 }
-.program_experts{
+.program_experts {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -492,19 +445,22 @@ video {
     flex-direction: column;
     gap: 1rem;
 }
-.program_experts img{
+
+.program_experts img {
     width: 10%;
     height: 10%;
 }
-.program_experts h2{
+
+.program_experts h2 {
     font-size: 1.5rem;
     color: black;
 }
-.program_experts h2 span{
+
+.program_experts h2 span {
     color: tomato;
 }
 
-.gymer{
+.gymer {
     display: flex;
     border: 10px solid #fff;
     box-shadow: 10px 10px 10px 10px rgba(138, 133, 133, 0.3);
@@ -512,76 +468,110 @@ video {
     gap: 2rem;
     box-sizing: content-box;
 }
-.gymer_one{
-    /* padding: 10px; */
+
+.gymer_one {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-.gymer_second{
+
+.gymer_second {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-.gymer_three{
+
+.gymer_three {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-.gymer_one h5{
+
+.gymer_one h5 {
     color: tomato;
 }
-.gymer_second h5{
+
+.gymer_second h5 {
     color: tomato;
 }
-.gymer_three h5{
+
+.gymer_three h5 {
     color: tomato;
 }
-.social_icons{
+
+.social_icons {
     display: flex;
     gap: 1rem;
 }
-.social_icons i:hover{
+
+.social_icons i:hover {
     color: tomato;
     cursor: pointer;
 }
-.form{
+
+.form {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
+    /* flex-direction: column; */
+    gap: 2rem;
 }
-.form .map{
+
+.post {
+    display: flex;
+    justify-content: center;
+    background-image: url("/images/contact-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+.file {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.file fieldset {
+    padding: 10px;
+    margin: 10px;
+    border: none;
+}
+
+.file fieldset input {
+    padding: 15px;
+}
+
+.file fieldset textarea {
+    padding: 25px;
+}
+
+iframe {
+    height: 600px;
     width: 100%;
-    height: 100%;
-    border: 0;
 }
-.gym_form{
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-.post{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-}
-footer{
+
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.gym_footer{
+
+
+.gym_footer {
     display: inline;
     color: #333;
-    /* justify-content: center;
-    align-items: center; */
 }
-.gym_footer a{
+
+.gym_footer a {
     color: tomato;
     text-decoration: none;
 
 }
+
 @media(max-width:768px) {
     header {
         /* height: 0; */
@@ -661,9 +651,6 @@ footer{
         cursor: pointer;
     }
 
-    /* .head h1{
-        font-size: 50px;
-    } */
     .head h1 span {
         color: tomato;
     }
@@ -806,7 +793,7 @@ footer{
         justify-content: center;
         align-items: center;
         text-align: center;
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
 
     .detail_mem h1 {
@@ -817,6 +804,7 @@ footer{
     .detail_mem p {
         font-size: 1rem;
         font-weight: 400;
+        margin: 0 1rem;
     }
 
     .detail_mem button {
@@ -824,13 +812,31 @@ footer{
         padding: 0.5rem;
         border-radius: 1px solid tomato;
     }
-
     .table_schedules {
-        display: block;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-        position: relative;
+        flex-direction: column; 
+        padding: 1rem; 
+        background-size: cover; 
     }
 
+    .program_table h2 {
+        font-size: 1.2rem; 
+    }
+
+    .program_table {
+        gap: 0.4rem; 
+    }
+
+    .class_days .days {
+        flex-wrap: wrap;
+        gap: 0.5rem; 
+        font-size: 0.9rem;
+    }
+
+    .class_table table tbody tr td {
+        font-size: 0.9rem; 
+        padding: 0.5rem;
+    }
+    .form {
+        flex-wrap: wrap;
+    }
 }
